@@ -12,9 +12,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(documents.router, prefix="/documents", tags=["Documents"])
-app.include_router(chat.router, prefix="/chat", tags=["Chat"])
-app.include_router(section.router, prefix="/sections", tags=["Sections"])
+app.include_router(documents.router, prefix="/api/documents", tags=["Documents"])
+app.include_router(chat.router, prefix="/api/chat", tags=["Chat"])
+app.include_router(section.router, prefix="/api/sections", tags=["Sections"])
 
 @app.on_event("startup")
 async def on_startup():

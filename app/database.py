@@ -5,8 +5,8 @@ from sqlalchemy.ext.asyncio import (
 from sqlalchemy.orm import sessionmaker
 
 from app.db.base import Base
+from app.core.config import DATABASE_URL
 
-DATABASE_URL = "sqlite+aiosqlite:///./knowledge_base.db"
 
 engine = create_async_engine(
     DATABASE_URL,
