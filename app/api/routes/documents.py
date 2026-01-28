@@ -1,5 +1,5 @@
 import uuid
-from fastapi import UploadFile, File, Depends, APIRouter
+from fastapi import UploadFile, File, Depends, APIRouter,status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.database import get_db
@@ -86,7 +86,7 @@ async def get_chunks_of_file(
         for chunk in chunks
     ]
 
-@router.delete("/file/{file_id}", status_code=204)
+@router.delete("/file/{file_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_file_and_chunks(
     file_id: uuid.UUID,
     db: AsyncSession = Depends(get_db)
