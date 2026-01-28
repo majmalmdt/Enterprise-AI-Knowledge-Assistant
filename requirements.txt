@@ -7,3 +7,5 @@ SQLAlchemy==2.0.32
 uvicorn==0.40.0
 redis==4.5.5
 websockets==16.0
+aiosqlite
+python-multipart
